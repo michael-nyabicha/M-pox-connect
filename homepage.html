@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - M-Pox Connect</title>
+    <script src="https://kit.fontawesome.com/YOUR-KIT-ID.js" crossorigin="anonymous"></script>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #004d99, #00b3b3);
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: cyan;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: url('hero-bg.jpg') center/cover no-repeat;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: cyan;
+            color: black;
+        }
+
+        .btn-primary:hover {
+            background: #004d99;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: black;
+        }
+
+        .btn-secondary:hover {
+            background: gray;
+            color: white;
+        }
+
+        /* About Section */
+        .about-home {
+            padding: 50px 20px;
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .about-home h2 {
+            color: #004d99;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="Screenshot 2025-03-09 at 09.55.06.png" alt="M-Pox Connect Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="ser.html">Services</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to M-Pox Connect</h1>
+        <p>Providing Awareness, Education, and Support on M-Pox</p>
+        <a href="about.html" class="btn btn-primary">Learn More</a>
+        <a href="resources.html" class="btn btn-secondary">Get Help</a>
+    </section>
+
+    <section class="about-home">
+        <h2>Why M-Pox Awareness Matters</h2>
+        <p>M-Pox is a viral disease that affects individuals globally. Our mission is to provide up-to-date information, prevention strategies, and support for those in need.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 M-Pox Connect. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

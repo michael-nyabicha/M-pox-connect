@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to M-Pox Connect</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Login Container */
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        /* Logo */
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        /* User Icon */
+        .user-icon {
+            font-size: 50px;
+            color: gray;
+            margin-bottom: 15px;
+        }
+
+        /* Input Fields */
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Password Strength Indicator */
+        .password-strength {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Forgot Password */
+        .forgot-password {
+            color: #007bff;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-primary { background-color: #2b6bbd; }
+        .btn-google { background-color: #db4437; }
+        .btn-instagram { background-color: #c13584; }
+        .btn-x { background-color: black; }
+
+        /* Signup Section */
+        .signup {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .signup a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+        /* Error Message */
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+
+        /* Show/Hide Password Icon */
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <!-- Placeholder Logo -->
+        <img src="Screenshot 2025-03-09 at 09.55.06.png" alt="Logo" class="logo">
+
+        <!-- User Icon -->
+        <div class="user-icon">👤</div>
+
+        <!-- Login Form -->
+        <h2>Login to M-Pox Connect</h2>
+
+        <input type="text" id="username" placeholder="Username or Email">
+        <span class="error" id="username-error">Please enter a valid username or email</span>
+
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Password">
+            <span class="toggle-password" onclick="togglePassword('password')">👁</span>
+        </div>
+        <span class="error" id="password-error">Password must be at least 6 characters</span>
+        <span class="password-strength" id="password-strength"></span>
+
+        <div class="password-container">
+            <input type="password" id="confirm-password" placeholder="Confirm Password">
+            <span class="toggle-password" onclick="togglePassword('confirm-password')">👁</span>
+        </div>
+        <span class="error" id="confirm-password-error">Passwords do not match</span>
+
+        <a href="#" class="forgot-password">Forgot Password?</a>
+
+        <button class="btn btn-primary" id="login-btn" disabled>Login</button>
+        <button class="btn btn-google">Login with Google</button>
+        <button class="btn btn-instagram">Login with Instagram</button>
+        <button class="btn btn-x">Login with X</button>
+
+        <!-- Signup Link -->
+        <p class="signup">Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+
+    <script>
+        // Function to toggle password visibility
+        function togglePassword(fieldId) {
+            let field = document.getElementById(fieldId);
+            if (field.type === "password") {
+                field.type = "text";
+            } else {
+                field.type = "password";
+            }
+        }
+
+        // Validate Inputs
+        function validateInputs() {
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let confirmPassword = document.getElementById("confirm-password").value.trim();
+            let loginBtn = document.getElementById("login-btn");
+
+            // Username validation
+            document.getElementById("username-error").style.display = username ? "none" : "block";
+
+            // Password validation
+            let passwordError = document.getElementById("password-error");
+            let passwordStrength = document.getElementById("password-strength");
+            if (password.length < 6) {
+                passwordError.style.display = "block";
+                passwordStrength.innerHTML = "Weak Password 🔴";
+                passwordStrength.style.color = "red";
+            } else {
+                passwordError.style.display = "none";
+                passwordStrength.innerHTML = "Strong Password 🟢";
+                passwordStrength.style.color = "green";
+            }
+
+            // Confirm Password validation
+            let confirmPasswordError = document.getElementById("confirm-password-error");
+            confirmPasswordError.style.display = (password === confirmPassword) ? "none" : "block";
+
+            // Enable login button if all inputs are valid
+            if (username && password.length >= 6 && password === confirmPassword) {
+                loginBtn.disabled = false;
+            } else {
+                loginBtn.disabled = true;
+            }
+        }
+
+        // Add event listeners for real-time validation
+        document.getElementById("username").addEventListener("input", validateInputs);
+        document.getElementById("password").addEventListener("input", validateInputs);
+        document.getElementById("confirm-password").addEventListener("input", validateInputs);
+
+        // Simulate login
+        document.getElementById("login-btn").addEventListener("click", function() {
+            alert("Login Successful!");
+            window.location.href = "home.html"; // Redirect to another page
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signs and Symptoms of M-Pox</title>
+    <script src="https://kit.fontawesome.com/YOUR-KIT-ID.js" crossorigin="anonymous"></script> <!-- FontAwesome for icons -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #004d99;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #004d99;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .symptom-card {
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .symptom-card i {
+            color: #004d99;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            margin-top: 20px;
+        }
+
+        .faq-item {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background: #bbdefb;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #004d99;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function toggleFAQ(id) {
+            var answer = document.getElementById(id);
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Signs and Symptoms of M-Pox</h1>
+    </header>
+
+    <!-- Content Section -->
+    <div class="container">
+        <h2>Common Symptoms</h2>
+        <p>M-Pox symptoms typically appear within 5 to 21 days after exposure. The most common symptoms include:</p>
+
+        <div class="symptom-card">
+            <i class="fas fa-thermometer-three-quarters"></i><strong> Fever and Chills:</strong> High fever, often with sudden chills.
+        </div>
+        <div class="symptom-card">
+            <i class="fas fa-hand-holding-heart"></i><strong> Swollen Lymph Nodes:</strong> Painful swelling in the neck, armpits, or groin.
+        </div>
+        <div class="symptom-card">
+            <i class="fas fa-battery-empty"></i><strong> Extreme Fatigue:</strong> Severe tiredness, making daily tasks difficult.
+        </div>
+        <div class="symptom-card">
+            <i class="fas fa-radiation"></i><strong> Skin Rash:</strong> Rash that develops into fluid-filled blisters.
+        </div>
+        <div class="symptom-card">
+            <i class="fas fa-dizzy"></i><strong> Headache and Muscle Aches:</strong> Persistent pain in the head and body.
+        </div>
+
+        <h2>Progression of Symptoms</h2>
+        <ul>
+            <li><strong>Days 1-5:</strong> Fever, muscle aches, swollen glands.</li>
+            <li><strong>Days 5+:</strong> Rash appears, spreading across the body.</li>
+            <li><strong>Recovery:</strong> Rash dries and scabs over within 2-4 weeks.</li>
+        </ul>
+
+        <h2>When to Seek Medical Help</h2>
+        <ul>
+            <li>Fever that does not subside.</li>
+            <li>Severe rash spreading quickly.</li>
+            <li>Difficulty breathing or chest pain.</li>
+        </ul>
+
+        <h2>Preventive Measures</h2>
+        <ul>
+            <li>Get vaccinated if at risk.</li>
+            <li>Practice good hygiene and wash hands frequently.</li>
+            <li>Avoid contact with infected individuals.</li>
+            <li>Use protective equipment if handling infected materials.</li>
+        </ul>
+
+        <!-- FAQ Section -->
+        <h2>FAQs</h2>
+        <div class="faq">
+            <div class="faq-item" onclick="toggleFAQ('faq1')">
+                <strong>🔹 How is M-Pox transmitted?</strong>
+            </div>
+            <div id="faq1" class="faq-answer">
+                M-Pox spreads through direct contact with infected bodily fluids, lesions, and contaminated objects.
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ('faq2')">
+                <strong>🔹 Can M-Pox be treated?</strong>
+            </div>
+            <div id="faq2" class="faq-answer">
+                While no specific cure exists, symptoms can be managed with supportive care, hydration, and antiviral medication in severe cases.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 M-Pox Awareness Initiative | Contact us: info@mpoxconnect.com</p>
+    </footer>
+
+</body>
+</html>
